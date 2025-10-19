@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-nati
 import { StatusBar } from 'expo-status-bar';
 import { COLORS } from '../constants';
 
-export default function HomeScreen({ navigation }) {
+export default function HomeScreen() {
   return (
     <View style={styles.container}>
       <StatusBar style="light" />
@@ -11,49 +11,49 @@ export default function HomeScreen({ navigation }) {
       {/* Header */}
       <View style={styles.header}>
         <Text style={styles.headerTitle}>MoniMoni</Text>
-        <Text style={styles.headerSubtitle}>Tu identidad de pago digital</Text>
+        <Text style={styles.headerSubtitle}>Your digital payment identity</Text>
       </View>
 
       <ScrollView style={styles.content}>
-        {/* Card de Bienvenida */}
+        {/* Welcome Card */}
         <View style={styles.welcomeCard}>
-          <Text style={styles.welcomeTitle}>¡Bienvenido!</Text>
+          <Text style={styles.welcomeTitle}>Welcome!</Text>
           <Text style={styles.welcomeText}>
-            Comparte tus cuentas bancarias, links de pago y datos de facturación en un solo lugar.
+            Share your bank accounts, payment links, and billing information all in one place.
           </Text>
         </View>
 
-        {/* Opciones principales */}
+        {/* Main options */}
         <View style={styles.optionsContainer}>
           <TouchableOpacity style={styles.optionCard}>
             <Text style={styles.optionIcon}>🏦</Text>
-            <Text style={styles.optionTitle}>Agregar Cuenta</Text>
-            <Text style={styles.optionSubtitle}>Bancaria</Text>
+            <Text style={styles.optionTitle}>Add Bank</Text>
+            <Text style={styles.optionSubtitle}>Account</Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.optionCard}>
             <Text style={styles.optionIcon}>💳</Text>
-            <Text style={styles.optionTitle}>Link de Pago</Text>
-            <Text style={styles.optionSubtitle}>PayPhone, PayPal</Text>
+            <Text style={styles.optionTitle}>Payment</Text>
+            <Text style={styles.optionSubtitle}>Link</Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.optionCard}>
             <Text style={styles.optionIcon}>📄</Text>
-            <Text style={styles.optionTitle}>Datos de</Text>
-            <Text style={styles.optionSubtitle}>Facturación</Text>
+            <Text style={styles.optionTitle}>Billing</Text>
+            <Text style={styles.optionSubtitle}>Information</Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.optionCard}>
             <Text style={styles.optionIcon}>📲</Text>
-            <Text style={styles.optionTitle}>Compartir</Text>
-            <Text style={styles.optionSubtitle}>QR o Link</Text>
+            <Text style={styles.optionTitle}>Share</Text>
+            <Text style={styles.optionSubtitle}>QR or Link</Text>
           </TouchableOpacity>
         </View>
 
-        {/* Info adicional */}
+        {/* Additional info */}
         <View style={styles.infoCard}>
           <Text style={styles.infoText}>
-            Comparte tu información de pago de forma segura y rápida con quien necesites.
+            Share your payment information safely and quickly with anyone you need.
           </Text>
         </View>
       </ScrollView>

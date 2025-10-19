@@ -1,16 +1,16 @@
 # MoniMoni
 
-**Tu identidad de pago digital para Ecuador**
+**Your digital payment identity for Ecuador**
 
-MoniMoni simplifica el compartir información de pago en Ecuador. Agrupa tus cuentas bancarias, links de PayPhone, PayPal, Nequi y datos de facturación en una sola app.
+MoniMoni simplifies sharing payment information in Ecuador. Group your bank accounts, PayPhone, PayPal, Nequi links, and billing data in a single app.
 
-## Características
+## Features
 
-- Agregar y guardar múltiples cuentas bancarias
-- Links de pago (PayPhone, PayPal, Nequi)
-- Generar QR y link compartible
-- Incluir datos de facturación (RUC, email, dirección)
-- Copiar, compartir o exportar datos al instante
+- Add and save multiple bank accounts
+- Payment links (PayPhone, PayPal, Nequi)
+- Generate shareable QR and link
+- Include billing information (RUC, email, address)
+- Copy, share, or export data instantly
 
 ## Tech Stack
 
@@ -18,119 +18,119 @@ MoniMoni simplifica el compartir información de pago en Ecuador. Agrupa tus cue
 - **Backend:** Firebase / Firestore
 - **Auth:** Firebase Auth (Google/Email)
 - **QR & Sharing:** react-native-qrcode-svg, react-native-share
-- **Navegación:** React Navigation v7
+- **Navigation:** React Navigation v7
 
-## Instalación
+## Installation
 
-### Prerrequisitos
+### Prerequisites
 
 - Node.js 18+
-- npm o yarn
+- npm or yarn
 - Expo CLI
-- iOS Simulator (Mac) o Android Studio
+- iOS Simulator (Mac) or Android Studio
 
-### Pasos
+### Steps
 
-1. **Clonar el repositorio**
+1. **Clone the repository**
 ```bash
-git clone https://github.com/tu-usuario/monimoni.git
+git clone https://github.com/your-username/monimoni.git
 cd monimoni
 ```
 
-2. **Instalar dependencias**
+2. **Install dependencies**
 ```bash
 npm install
 ```
 
-3. **Configurar Firebase**
-   - Crea un proyecto en [Firebase Console](https://console.firebase.google.com/)
-   - Copia `.env.example` a `.env`
-   - Completa las credenciales de Firebase en `.env`
-   - Actualiza `src/config/firebase.js` con tu configuración
+3. **Configure Firebase**
+   - Create a project in [Firebase Console](https://console.firebase.google.com/)
+   - Copy `.env.example` to `.env`
+   - Fill in Firebase credentials in `.env`
+   - Update `src/config/firebase.js` with your configuration
 
-4. **Ejecutar la app**
+4. **Run the app**
 
 ```bash
-# Iniciar el servidor de desarrollo
+# Start development server
 npm start
 
-# Ejecutar en iOS
+# Run on iOS
 npm run ios
 
-# Ejecutar en Android
+# Run on Android
 npm run android
 ```
 
-## Estructura del Proyecto
+## Project Structure
 
 ```
 monimoni/
-├── App.js                 # Componente principal
+├── App.js                 # Main component
 ├── src/
-│   ├── screens/          # Pantallas de la app
+│   ├── screens/          # App screens
 │   │   └── HomeScreen.js
-│   ├── components/       # Componentes reutilizables
-│   ├── navigation/       # Configuración de navegación
+│   ├── components/       # Reusable components
+│   ├── navigation/       # Navigation configuration
 │   │   └── AppNavigator.js
-│   ├── services/         # Servicios (Firebase, API)
-│   ├── config/           # Configuraciones
+│   ├── services/         # Services (Firebase, API)
+│   ├── config/           # Configurations
 │   │   └── firebase.js
-│   ├── utils/            # Utilidades y helpers
-│   └── constants/        # Constantes (colores, bancos, etc.)
+│   ├── utils/            # Utilities and helpers
+│   └── constants/        # Constants (colors, banks, etc.)
 │       ├── colors.js
 │       └── index.js
-├── assets/               # Imágenes, iconos, fuentes
-└── app.json             # Configuración de Expo
+├── assets/               # Images, icons, fonts
+└── app.json             # Expo configuration
 
 ```
 
-## Configuración iOS
+## iOS Configuration
 
-El proyecto está configurado con:
+The project is configured with:
 - Bundle ID: `com.monimoni.app`
-- Soporte para iPad
-- Orientación: Portrait
+- iPad support
+- Orientation: Portrait
 
-## Configuración Android
+## Android Configuration
 
-El proyecto está configurado con:
+The project is configured with:
 - Package: `com.monimoni.app`
-- Adaptive Icon con color de marca
-- Edge-to-Edge habilitado
+- Adaptive Icon with brand color
+- Edge-to-Edge enabled
 
 ## Roadmap
 
 ### MVP (v1.0)
-- [x] Setup base del proyecto
-- [ ] Autenticación con Firebase
-- [ ] CRUD de cuentas bancarias
-- [ ] Generación de QR
-- [ ] Compartir por WhatsApp/Link
-- [ ] Datos de facturación
+- [x] Base project setup
+- [ ] Firebase authentication
+- [ ] Bank accounts CRUD
+- [ ] QR generation
+- [ ] Share via WhatsApp/Link
+- [ ] Billing information
 
-### Futuro (v2.0+)
-- [ ] Solicitudes de pago dinámicas con PayPhone API
-- [ ] División de gastos entre grupos
-- [ ] Auto-detectar banco por prefijo de cuenta
-- [ ] Integración con SRI para facturación
-- [ ] Perfiles web públicos (monimoni.app/@usuario)
+### Future (v2.0+)
+- [ ] Dynamic payment requests with PayPhone API
+- [ ] Expense splitting between groups
+- [ ] Auto-detect bank by account prefix
+- [ ] SRI integration for invoicing
+- [ ] Public web profiles (monimoni.app/@username)
 
-## Contribuir
+## Contributing
 
-Las contribuciones son bienvenidas. Por favor:
+Contributions are welcome. Please:
 
-1. Fork el proyecto
-2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
-3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
-4. Push a la rama (`git push origin feature/AmazingFeature`)
-5. Abre un Pull Request
+1. Fork the project
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-## Licencia
+## License
 
-Este proyecto está bajo la Licencia MIT.
+This project is under the MIT License.
 
-## Contacto
+## Contact
 
 MoniMoni Team - [@monimoni_ec](https://twitter.com/monimoni_ec)
 
-Sitio Web: [https://monimoni.app](https://monimoni.app)
+Website: [https://monimoni.app](https://monimoni.app)

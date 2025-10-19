@@ -1,62 +1,62 @@
-# Guía de Configuración - MoniMoni
+# Setup Guide - MoniMoni
 
-## Configuración Inicial
+## Initial Setup
 
-### 1. Configurar Firebase
+### 1. Configure Firebase
 
-1. Ve a [Firebase Console](https://console.firebase.google.com/)
-2. Crea un nuevo proyecto llamado "MoniMoni"
-3. Habilita Authentication:
+1. Go to [Firebase Console](https://console.firebase.google.com/)
+2. Create a new project called "MoniMoni"
+3. Enable Authentication:
    - Email/Password
    - Google Sign-In
-4. Crea una base de datos Firestore en modo test
-5. Copia las credenciales del proyecto
+4. Create a Firestore database in test mode
+5. Copy the project credentials
 
-### 2. Configurar Variables de Entorno
+### 2. Configure Environment Variables
 
 ```bash
-# Copia el archivo de ejemplo
+# Copy the example file
 cp .env.example .env
 
-# Edita .env con tus credenciales de Firebase
+# Edit .env with your Firebase credentials
 ```
 
-Actualiza también `src/config/firebase.js` con tus credenciales.
+Also update `src/config/firebase.js` with your credentials.
 
-### 3. Instalar Dependencias de Desarrollo
+### 3. Install Development Dependencies
 
 ```bash
-# Si usas iOS (solo en Mac)
+# If using iOS (Mac only)
 cd ios && pod install && cd ..
 
-# Instalar dependencias globales (si no las tienes)
+# Install global dependencies (if you don't have them)
 npm install -g expo-cli
 ```
 
-## Ejecutar la App
+## Running the App
 
-### Modo Desarrollo
+### Development Mode
 
 ```bash
-# Iniciar Metro Bundler
+# Start Metro Bundler
 npm start
 
-# En otra terminal - iOS
+# In another terminal - iOS
 npm run ios
 
-# En otra terminal - Android
+# In another terminal - Android
 npm run android
 ```
 
-### Dispositivo Físico
+### Physical Device
 
-1. Instala la app Expo Go en tu dispositivo
-2. Ejecuta `npm start`
-3. Escanea el QR con tu cámara (iOS) o Expo Go (Android)
+1. Install the Expo Go app on your device
+2. Run `npm start`
+3. Scan the QR with your camera (iOS) or Expo Go (Android)
 
-## Estructura de Datos (Firestore)
+## Data Structure (Firestore)
 
-### Colección: `users`
+### Collection: `users`
 
 ```javascript
 {
@@ -68,7 +68,7 @@ npm run android
 }
 ```
 
-### Colección: `bankAccounts`
+### Collection: `bankAccounts`
 
 ```javascript
 {
@@ -82,83 +82,83 @@ npm run android
 }
 ```
 
-### Colección: `paymentLinks`
+### Collection: `paymentLinks`
 
 ```javascript
 {
   userId: "user_id",
   type: "PayPhone",
   link: "https://payphone.app/...",
-  label: "Mi PayPhone Personal",
+  label: "My Personal PayPhone",
   createdAt: timestamp
 }
 ```
 
-### Colección: `billingInfo`
+### Collection: `billingInfo`
 
 ```javascript
 {
   userId: "user_id",
   ruc: "1234567890001",
-  businessName: "Mi Empresa S.A.",
-  address: "Av. Principal 123",
-  email: "facturacion@empresa.com",
+  businessName: "My Company S.A.",
+  address: "Main Avenue 123",
+  email: "billing@company.com",
   phone: "+593987654321",
   createdAt: timestamp
 }
 ```
 
-## Configuración de Permisos
+## Permissions Configuration
 
 ### iOS (ios/Podfile)
 
 ```ruby
-# Ya configurado automáticamente por Expo
-# Permisos necesarios:
-# - Cámara (para escanear QR)
-# - Compartir archivos
+# Already configured automatically by Expo
+# Required permissions:
+# - Camera (for scanning QR)
+# - File sharing
 ```
 
 ### Android (android/app/src/main/AndroidManifest.xml)
 
 ```xml
-<!-- Ya configurado automáticamente por Expo -->
-<!-- Permisos necesarios: -->
+<!-- Already configured automatically by Expo -->
+<!-- Required permissions: -->
 <!-- - INTERNET -->
-<!-- - CAMERA (opcional, para escanear QR) -->
+<!-- - CAMERA (optional, for scanning QR) -->
 ```
 
-## Próximos Pasos de Desarrollo
+## Next Development Steps
 
-### Fase 1: Autenticación
-- [ ] Implementar pantalla de login
-- [ ] Integrar Firebase Auth
-- [ ] Manejar estados de autenticación
+### Phase 1: Authentication
+- [ ] Implement login screen
+- [ ] Integrate Firebase Auth
+- [ ] Handle authentication states
 
-### Fase 2: Gestión de Cuentas
-- [ ] CRUD de cuentas bancarias
-- [ ] Validación de números de cuenta
-- [ ] Lista de cuentas guardadas
+### Phase 2: Account Management
+- [ ] Bank accounts CRUD
+- [ ] Account number validation
+- [ ] Saved accounts list
 
-### Fase 3: Links de Pago
-- [ ] Agregar links de PayPhone
-- [ ] Agregar links de PayPal/Nequi
-- [ ] Validación de URLs
+### Phase 3: Payment Links
+- [ ] Add PayPhone links
+- [ ] Add PayPal/Nequi links
+- [ ] URL validation
 
-### Fase 4: Compartir
-- [ ] Generar QR con toda la info
-- [ ] Compartir por WhatsApp
-- [ ] Compartir link público
+### Phase 4: Sharing
+- [ ] Generate QR with all info
+- [ ] Share via WhatsApp
+- [ ] Share public link
 
-### Fase 5: Facturación
-- [ ] Formulario de datos de facturación
-- [ ] Validación de RUC
-- [ ] Incluir en QR/compartir
+### Phase 5: Billing
+- [ ] Billing information form
+- [ ] RUC validation
+- [ ] Include in QR/sharing
 
 ## Testing
 
 ```bash
-# Ejecutar tests (cuando se implementen)
+# Run tests (when implemented)
 npm test
 
 # Lint
@@ -168,24 +168,24 @@ npm run lint
 npm run format
 ```
 
-## Build para Producción
+## Production Build
 
-### Usando EAS (Expo Application Services)
+### Using EAS (Expo Application Services)
 
 ```bash
-# Instalar EAS CLI
+# Install EAS CLI
 npm install -g eas-cli
 
 # Login
 eas login
 
-# Configurar proyecto
+# Configure project
 eas build:configure
 
-# Build para Android
+# Build for Android
 eas build --platform android
 
-# Build para iOS
+# Build for iOS
 eas build --platform ios
 ```
 
@@ -193,11 +193,11 @@ eas build --platform ios
 
 ### Error: "Module not found"
 ```bash
-# Limpiar cache
+# Clear cache
 npm start -- --reset-cache
 ```
 
-### Error en iOS: "Pod install failed"
+### iOS Error: "Pod install failed"
 ```bash
 cd ios
 pod deintegrate
@@ -205,14 +205,14 @@ pod install
 cd ..
 ```
 
-### Error en Android: Gradle
+### Android Error: Gradle
 ```bash
 cd android
 ./gradlew clean
 cd ..
 ```
 
-## Recursos Útiles
+## Useful Resources
 
 - [Expo Documentation](https://docs.expo.dev/)
 - [React Navigation](https://reactnavigation.org/)

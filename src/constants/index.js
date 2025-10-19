@@ -1,16 +1,16 @@
 export { COLORS } from './colors';
 
-// Constantes de la app
+// App constants
 export const APP_NAME = 'MoniMoni';
 export const APP_VERSION = '1.0.0';
 
-// Tipos de cuenta bancaria comunes en Ecuador
+// Common bank account types in Ecuador
 export const BANK_TYPES = {
   SAVINGS: 'Ahorros',
   CHECKING: 'Corriente',
 };
 
-// Bancos populares en Ecuador
+// Popular banks in Ecuador
 export const ECUADORIAN_BANKS = [
   'Banco Pichincha',
   'Banco del Pacífico',
@@ -22,7 +22,7 @@ export const ECUADORIAN_BANKS = [
   'Otro',
 ];
 
-// Métodos de pago
+// Payment methods
 export const PAYMENT_METHODS = {
   BANK_TRANSFER: 'Transferencia Bancaria',
   PAYPHONE: 'PayPhone',
